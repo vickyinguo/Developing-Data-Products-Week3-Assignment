@@ -1,0 +1,20 @@
+---
+title: "Developing Data Products Week3 Assignment"
+author: "Ying Guo"
+date: "June 12, 2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Cars
+
+```{r, echo=FALSE, message=FALSE}
+library(plotly)
+plot_ly(data=mtcars,x=~wt, y=~mpg, mode="markers",symbol=~as.factor(cyl),type="scatter",marker=list(size=10),symbols=c('circle','x','o'))%>%
+    layout(title='mtcars weight vs mpg',
+           xaxis = list(title='weight'),
+           yaxis = list(title='mpg'))
+```
